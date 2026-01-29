@@ -103,6 +103,24 @@
 		</div>
 	</div>
 
+	<dialog class="new-book">
+		<form method="dialog">
+			<span>Enter the book information</span>
+			<label for="book-title">Title</label>
+			<input type="text" name="book-title" id="book-title">
+			<label for="author">Author</label>
+			<input type="text" name="author" id="author">
+			<label for="pages">Pages</label>
+			<input type="number" name="pages" id="pages">
+			<div>
+				<label for="readed">Read?</label>
+				<input type="checkbox" name="readed" id="readed">
+			</div>
+			<button type="submit" id="add">Add</button>
+			<button type="submit" id="cancel">Cancel</button>
+		</form>
+	</dialog>
+	
 	<div class="footer">
 		<p>Built by <a href="https://github.com/jormaedes" target="_blank">Jormaedes</a> as part of <a
 				href="https://www.theodinproject.com/" target="_blank">The Odin Project</a></p>
