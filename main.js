@@ -25,11 +25,16 @@ function Book(title, author, pages, read)
 		this.read = 'Not read';
 }
 
+function addChild(book)
+{
+	booksList.appendChild(book);
+}
+
 function addBookToLibrary()
 {
 	const book = createBook();
 	books.push(book);
-	console.log(books);
+	addChild(book);
 }
 
 function createBook()
@@ -57,7 +62,7 @@ function createBook()
 	p2.textContent = book.author;
 	p3.textContent = book.pages;
 	if (book.read == 'Read')
-		btnStatus.classList.add('Read');
+		btnStatus.classList.add('read');
 	btnStatus.textContent = book.read;
 	btnRemove.appendChild(iconTrash);
 	divBtns.appendChild(btnStatus);
