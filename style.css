@@ -65,3 +65,64 @@ body {
 #btn-add:hover {
 	background: var(--primary-btn);
 }
+
+.book {
+	width: 250px;
+	background: var(--main-text);
+	padding: 20px;
+	border-radius: 10px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr auto auto auto;
+	color: var(--card-book);
+}
+
+.books-list {
+	background: var(--primary-btn);
+	padding: 20px 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.book button {
+	padding: 10px 20px;
+	font-size: 18px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.book .title {
+	font-weight: 700;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.buttons
+{
+	margin-top: 5px;
+	display: flex;
+	gap: 5px;
+}
+
+.buttons .status {
+	flex-grow: 1;
+	background: var(--secondary-text);
+	color: var(--card-book);
+}
+
+.buttons .status.read {
+	background: var(--read-book);
+	color: var(--card-book);
+}
+
+.buttons .status.read:hover {
+	background: var(--secondary-text);
+	color: var(--card-book);
+}
+
+.buttons .remove-book {
+	background: var(--remove-btn);
+	color: var(--card-book);
+}
