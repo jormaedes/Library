@@ -126,3 +126,20 @@ body {
 	background: var(--remove-btn);
 	color: var(--card-book);
 }
+
+.footer {
+	text-align: center;
+	background-color: #0F172A;
+	padding: 20px;
+	color: var(--card-book);
+}
+
+.footer a {
+	text-decoration: none;
+	color: var(--primary-btn);
+}
+
+.footer a:hover {
+	text-decoration: none;
+	color: var(--secondary-text);
+}
