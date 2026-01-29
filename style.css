@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+	--bg: #F8FAFC;
+	--main-text: #0F172A;
+	--card-book: #FFFFFF;
+	--secondary-text: #475569;
+	--primary-btn: #2563EB;
+	--read-book: #16A34A;
+	--remove-btn: #DC2626;
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+}
+
+.container {
+	width: 70vw;
+	margin: 0 auto;
+}
+
+.header {
+	background: #F8FAFC;
+	padding: 20px 0;
+}
+
+.header-content {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.logo {
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 32px;
+}
+
+.info ul {
+	list-style: none;
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+#btn-add {
+	padding: 10px 25px;
+	font-weight: 600;
+	font-size: 18px;
+	border-radius: 10px;
+	border: none;
+	background: var(--main-text);
+	color: var(--card-book);
+	cursor: pointer;
+}
+
+#btn-add:hover {
+	background: var(--primary-btn);
+}
