@@ -222,13 +222,13 @@ body {
 	gap: 10px
 }
 
-.new-book form span {
+.new-book form span:first-child {
 	text-align: center;
 	font-weight: 600;
 }
 
 .new-book form label,
-.new-book form span {
+.new-book form span:first-child {
 	color: var(--card-book);
 }
 
@@ -241,4 +241,10 @@ dialog::backdrop {
     green
   );
   opacity: 0.75;
+}
+
+.error {
+	color: var(--remove-btn);
+	text-align: left;
+	font-size: 14px;
 }
