@@ -1,39 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 	<title>Libary App</title>
 </head>
+
 <body>
 	<div class="header">
-		<div class="container">
+		<div class="container header-content">
 			<div class="logo">📚 Libary App</div>
 			<div class="info">
 				<ul>
-					<li>Total Books: <span class="tb-value"></span></li>
-					<li>Books read: <span class="rb-value"></span></li>
-					<li>Books not read: <span class="nrb-value"></span></li>
+					<li>Total Books: <span class="tb-value">0</span></li>
+					<li>Books read: <span class="rb-value">0</span></li>
+					<li>Books not read: <span class="nrb-value">0</span></li>
 				</ul>
 			</div>
-			<button>+ Add book</button>
+			<button id="btn-add">+ Add book</button>
 		</div>
 	</div>
 
 	<div class="books-list container">
 		<div class="book">
-			<p>Harry Potter</p>
-			<p>J. K. Rowling</p>
-			<p>331</p>
+			<p class="title">Harry Potter and the Sorcerer's Stone</p>
+			<p>Author: J. K. Rowling</p>
+			<p>Pages: 331</p>
+			<div class="buttons">
+				<button class="status read">Read</button>
+				<button class="remove-book"><i class="ri-delete-bin-line"></i></button>
+			</div>
 		</div>
+
+		<div class="book">
+			<p class="title">Harry Potter and the Chamber of Secrets</p>
+			<p>Author: J. K. Rowling</p>
+			<p>Pages: 331</p>
+			<div class="buttons">
+				<button class="status read">Read</button>
+				<button class="remove-book"><i class="ri-delete-bin-line"></i></button>
+			</div>
+		</div>
+
+		<div class="book">
+			<p class="title">Harry Potter and the Prisoner of Azkaban</p>
+			<p>Author: J. K. Rowling</p>
+			<p>Pages: 331</p>
+			<div class="buttons">
+				<button class="status">Read</button>
+				<button class="remove-book"><i class="ri-delete-bin-line"></i></button>
+			</div>
+		</div>
+
+		<div class="book">
+			<p class="title">Harry Potter and the Goblet of Fire</p>
+			<p>Author: J. K. Rowling</p>
+			<p>Pages: 331</p>
+			<div class="buttons">
+				<button class="status read">Read</button>
+				<button class="remove-book"><i class="ri-delete-bin-line"></i></button>
+			</div>
+		</div>
+
+		<div class="book">
+			<p class="title">Harry Potter and the Order of the Phoenix</p>
+			<p>Author: J. K. Rowling</p>
+			<p>Pages: 331</p>
+			<div class="buttons">
+				<button class="status read">Read</button>
+				<button class="remove-book"><i class="ri-delete-bin-line"></i></button>
+			</div>
+		</div>
+
+		<div class="book">
+			<p class="title">Harry Potter and the Half-Blood Prince</p>
+			<p>Author: J. K. Rowling</p>
+			<p>Pages: 331</p>
+			<div class="buttons">
+				<button class="status read">Read</button>
+				<button class="remove-book"><i class="ri-delete-bin-line"></i></button>
+			</div>
+		</div>
+
+		<div class="book">
+			<p class="title">Harry Potter and the Deathly Hallows</p>
+			<p>Author: J. K. Rowling</p>
+			<p>Pages: 331</p>
+			<div class="buttons">
+				<button class="status read">Read</button>
+				<button class="remove-book"><i class="ri-delete-bin-line"></i></button>
+			</div>
+		</div>
+		
+
 	</div>
 
 	<div class="footer">
-		<p>Built by <a href="https://github.com/jormaedes">Jormaedes</a> as part of <a href="https://www.theodinproject.com/">The Odin Project</a></p>
-		<p>&copy; 2026  all right reserved</p>
+		<p>Built by <a href="https://github.com/jormaedes">Jormaedes</a> as part of <a
+				href="https://www.theodinproject.com/">The Odin Project</a></p>
+		<p>&copy; 2026 all right reserved</p>
 	</div>
-	
+
 	<script src="main.js"></script>
 </body>
+
 </html>
