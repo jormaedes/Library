@@ -14,6 +14,13 @@ const authorIn = document.querySelector('#author');
 const pagesIn = document.querySelector('#pages');
 const isReadIn = document.querySelector('#readed');
 
+booksList.addEventListener('click', (e)=>{
+	if (e.target.closest('.remove-book')) {
+		const book = e.target.closest(".book");
+		removeBook(book);
+	}
+});
+
 function Book(title, author, pages, read)
 {
 	if (!new.target)
@@ -44,6 +51,19 @@ function addBookToLibrary()
 	else
 		nrb.textContent = parseInt(nrb.textContent) + 1;
 	addChild(book);
+}
+
+function removeBook(el)
+{
+	let i = books.indexOf(el);
+	if (i > -1)
+		books.splice(i, 1);
+	if (el.querySelector('.read'))
+			rb.textContent = parseInt(rb.textContent) - 1;
+	else
+			nrb.textContent = parseInt(nrb.textContent) - 1;
+	tb.textContent = parseInt(tb.textContent) - 1;
+	booksList.removeChild(el);
 }
 
 function createBook()
