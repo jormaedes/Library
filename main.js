@@ -50,6 +50,7 @@ function addBookToLibrary()
 		rb.textContent = parseInt(rb.textContent) + 1;
 	else
 		nrb.textContent = parseInt(nrb.textContent) + 1;
+	titleIn.parentElement.reset();
 	addChild(book);
 }
 
