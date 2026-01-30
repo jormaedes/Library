@@ -3,6 +3,10 @@ const btnAdd = document.getElementById("btn-add");
 const btnAddBook = dialog.querySelector("#add");
 const btnCancel = dialog.querySelector("#cancel");
 const books = [];
+const tb = document.querySelector('.tb-value');
+const rb = document.querySelector('.rb-value');
+const nrb = document.querySelector('.nrb-value');
+
 
 const booksList = document.querySelector('.books-list');
 const titleIn = document.querySelector('#book-title');
@@ -34,6 +38,12 @@ function addBookToLibrary()
 {
 	const book = createBook();
 	books.push(book);
+	console.log(book.querySelector('.read'));
+	tb.textContent = parseInt(tb.textContent) + 1;
+	if (book.querySelector('.read'))
+		rb.textContent = parseInt(rb.textContent) + 1;
+	else
+		nrb.textContent = parseInt(nrb.textContent) + 1;
 	addChild(book);
 }
 
