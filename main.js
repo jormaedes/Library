@@ -18,6 +18,21 @@ booksList.addEventListener('click', (e)=>{
 	if (e.target.closest('.remove-book')) {
 		const book = e.target.closest(".book");
 		removeBook(book);
+		return;
+	}
+	if (e.target.closest('.status')) {
+		const btnStatus = e.target.closest('.status');
+		if (!btnStatus) return;
+		if (btnStatus.classList.contains('read')) {
+			nrb.textContent = parseInt(nrb.textContent) + 1;
+			rb.textContent = parseInt(rb.textContent) - 1;
+			btnStatus.textContent = 'Not read';
+		} else {
+			nrb.textContent = parseInt(nrb.textContent) - 1;
+			rb.textContent = parseInt(rb.textContent) + 1;
+			btnStatus.textContent = 'Read';
+		}
+		btnStatus.classList.toggle('read');
 	}
 });
 
@@ -67,51 +82,24 @@ function removeBook(el)
 	booksList.removeChild(el);
 }
 
-function createBook()
-{
-	const book = new Book(titleIn.value, authorIn.value, pagesIn.value, isReadIn.checked);
-	const uid = crypto.randomUUID();
-	const newBook = document.createElement("div");
-	const p1 = document.createElement('p');
-	const p2 = document.createElement('p');
-	const p3 = document.createElement('p');
-	const divBtns = document.createElement("div");
-	const btnStatus = document.createElement("button");
-	const btnRemove = document.createElement("button");
-	const iconTrash = document.createElement('i');
+function createBook() {
+    const book = new Book(titleIn.value, authorIn.value, pagesIn.value, isReadIn.checked);
+    const uid = crypto.randomUUID();
+    const isRead = book.read === 'Read';
+    const newBook = document.createElement('div');
+    newBook.classList.add('book');
+    newBook.setAttribute('id', uid);
 
-	p1.classList.add('title');
-	divBtns.classList.add('buttons');
-	btnStatus.classList.add('status');
-	btnRemove.classList.add('remove-book');
-	newBook.classList.add('book');
-	newBook.setAttribute('id', uid);
-	iconTrash.classList.add('ri-delete-bin-line');
-
-	p1.textContent = book.title;
-	p2.textContent = book.author;
-	p3.textContent = book.pages;
-	if (book.read == 'Read')
-		btnStatus.classList.add('read');
-	btnStatus.textContent = book.read;
-	btnStatus.addEventListener('click', (event)=>{
-		if (event.target.classList.contains('read'))
-		{
-			nrb.textContent = parseInt(nrb.textContent) + 1;
-			rb.textContent = parseInt(rb.textContent) - 1;
-			event.target.textContent = 'Not read';
-		} else {
-			nrb.textContent = parseInt(nrb.textContent) - 1;
-			rb.textContent = parseInt(rb.textContent) + 1;
-			event.target.textContent = 'Read';
-		}
-		event.target.classList.toggle('read');
-	});
-	btnRemove.appendChild(iconTrash);
-	divBtns.appendChild(btnStatus);
-	divBtns.appendChild(btnRemove);
-	newBook.append(p1, p2, p3, divBtns);
-	return (newBook);
+    newBook.innerHTML = `
+        <p class="title">${book.title}</p>
+        <p>${book.author}</p>
+        <p>${book.pages}</p>
+        <div class="buttons">
+            <button class="status${isRead ? ' read' : ''}">${book.read}</button>
+            <button class="remove-book"><i class="ri-delete-bin-line"></i></button>
+        </div>
+    `;
+    return (newBook);
 }
 
 btnAdd.addEventListener("click", () => {
