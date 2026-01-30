@@ -38,7 +38,6 @@ function addBookToLibrary()
 {
 	const book = createBook();
 	books.push(book);
-	console.log(book.querySelector('.read'));
 	tb.textContent = parseInt(tb.textContent) + 1;
 	if (book.querySelector('.read'))
 		rb.textContent = parseInt(rb.textContent) + 1;
@@ -74,6 +73,19 @@ function createBook()
 	if (book.read == 'Read')
 		btnStatus.classList.add('read');
 	btnStatus.textContent = book.read;
+	btnStatus.addEventListener('click', (event)=>{
+		if (event.target.classList.contains('read'))
+		{
+			nrb.textContent = parseInt(nrb.textContent) + 1;
+			rb.textContent = parseInt(rb.textContent) - 1;
+			event.target.textContent = 'Not read';
+		} else {
+			nrb.textContent = parseInt(nrb.textContent) - 1;
+			rb.textContent = parseInt(rb.textContent) + 1;
+			event.target.textContent = 'Read';
+		}
+		event.target.classList.toggle('read');
+	});
 	btnRemove.appendChild(iconTrash);
 	divBtns.appendChild(btnStatus);
 	divBtns.appendChild(btnRemove);
